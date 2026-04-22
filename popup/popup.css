@@ -1,0 +1,416 @@
+/* ── Popup Layout ── */
+.popup {
+  width: 400px;
+  max-height: 580px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  z-index: 10;
+}
+
+.popup-header__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popup-header__title h1 {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.popup-header__settings {
+  color: var(--color-text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+
+.popup-header__settings:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+/* ── States ── */
+.popup-state {
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-state__icon {
+  margin-bottom: 4px;
+}
+
+.popup-state__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.popup-state__desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* ── Buttons ── */
+.btn {
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 550;
+  transition: all var(--transition);
+  margin-top: 4px;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn--secondary:hover {
+  background: var(--color-border);
+}
+
+/* ── Loading Spinner ── */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Results ── */
+#state-results {
+  padding: 0;
+  text-align: left;
+  align-items: stretch;
+}
+
+.results-header {
+  padding: 14px 16px 8px;
+}
+
+.results-header__page {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.results-header__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.results-header__cached {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.btn-rerun {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-rerun:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.results-summary {
+  display: flex;
+  gap: 8px;
+  padding: 4px 16px 12px;
+  flex-wrap: wrap;
+}
+
+.summary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.summary-badge--supported {
+  background: var(--color-supported-bg);
+  color: var(--color-supported);
+  border: 1px solid var(--color-supported-border);
+}
+
+.summary-badge--misleading {
+  background: var(--color-misleading-bg);
+  color: var(--color-misleading);
+  border: 1px solid var(--color-misleading-border);
+}
+
+.summary-badge--unverified {
+  background: var(--color-unverified-bg);
+  color: var(--color-unverified);
+  border: 1px solid var(--color-unverified-border);
+}
+
+/* ── Product Context ── */
+.product-context {
+  margin: 0 12px 12px;
+  padding: 12px 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.product-context__heading {
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.product-context__row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.product-context__label {
+  font-weight: 600;
+  color: var(--color-text);
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.product-context__label::after {
+  content: ':';
+}
+
+.product-context__value {
+  color: var(--color-text-secondary);
+}
+
+.product-context__impression {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── Claim Cards ── */
+.claims-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.claim-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  transition: box-shadow var(--transition);
+  animation: fadeInUp 0.3s ease both;
+}
+
+.claim-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.claim-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.claim-card__verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.claim-card__verdict--supported {
+  background: var(--color-supported-bg);
+  color: var(--color-supported);
+  border: 1px solid var(--color-supported-border);
+}
+
+.claim-card__verdict--misleading {
+  background: var(--color-misleading-bg);
+  color: var(--color-misleading);
+  border: 1px solid var(--color-misleading-border);
+}
+
+.claim-card__verdict--unverified {
+  background: var(--color-unverified-bg);
+  color: var(--color-unverified);
+  border: 1px solid var(--color-unverified-border);
+}
+
+.claim-card__category {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+}
+
+.claim-card__text {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-border);
+  font-style: italic;
+}
+
+.claim-card__explanation {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.claim-card__details {
+  margin-top: 8px;
+}
+
+.claim-card__details-toggle {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.claim-card__details-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.claim-card__details-toggle::before {
+  content: '\25B6\00a0';
+  font-size: 9px;
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.claim-card__details[open] > .claim-card__details-toggle::before {
+  transform: rotate(90deg);
+}
+
+.claim-card__reasoning {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-primary-light);
+}
+
+/* ── Verdict icons ── */
+.verdict-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+}
+
+/* ── Footer ── */
+.popup-footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.popup-footer p {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* ── Utilities ── */
+.hidden {
+  display: none !important;
+}
+
+/* ── Animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.claim-card:nth-child(1) { animation-delay: 0s; }
+.claim-card:nth-child(2) { animation-delay: 0.05s; }
+.claim-card:nth-child(3) { animation-delay: 0.1s; }
+.claim-card:nth-child(4) { animation-delay: 0.15s; }
+.claim-card:nth-child(5) { animation-delay: 0.2s; }
+.claim-card:nth-child(6) { animation-delay: 0.25s; }
+.claim-card:nth-child(7) { animation-delay: 0.3s; }
+.claim-card:nth-child(8) { animation-delay: 0.35s; }

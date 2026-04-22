@@ -1,0 +1,16 @@
+.DS_Store
+*.zip
+
+# Local editor and OS metadata
+.vscode/
+.idea/
+
+# Dependency and build folders, if tooling is added later
+node_modules/
+dist/
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example

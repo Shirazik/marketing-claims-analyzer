@@ -1,0 +1,138 @@
+/* ── Settings Layout ── */
+.settings {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+.settings-header {
+  margin-bottom: 32px;
+}
+
+.settings-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.settings-header__icon {
+  vertical-align: -5px;
+}
+
+.settings-header__subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ── Sections ── */
+.settings-section {
+  margin-bottom: 28px;
+}
+
+.settings-section h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.settings-section__desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* ── Input Group ── */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.btn-toggle-visibility {
+  padding: 8px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+}
+
+.btn-toggle-visibility:hover {
+  color: var(--color-text);
+}
+
+/* ── Key Status ── */
+.key-status {
+  margin-top: 8px;
+  font-size: 12px;
+  min-height: 18px;
+}
+
+.key-status--valid {
+  color: var(--color-supported);
+}
+
+.key-status--invalid {
+  color: var(--color-error);
+}
+
+.key-status--checking {
+  color: var(--color-text-muted);
+}
+
+/* ── Select ── */
+.select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  cursor: pointer;
+  min-width: 260px;
+  transition: border-color var(--transition);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* ── Actions ── */
+.settings-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.save-status {
+  font-size: 13px;
+  color: var(--color-supported);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.save-status--visible {
+  opacity: 1;
+}
