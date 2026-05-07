@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Marketing Claims Analyzer",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Analyze marketing claims on any product page. Get AI-powered verdicts: Supported, Misleading, or Unverified.",
   "permissions": [
     "activeTab",
     "storage",
-    "scripting"
+    "scripting",
+    "identity"
   ],
   "host_permissions": [
     "https://api.openai.com/*",
