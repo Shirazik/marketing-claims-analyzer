@@ -1,5 +1,6 @@
 .DS_Store
 *.zip
+store-description.txt
 
 # Local editor and OS metadata
 .vscode/
